@@ -12,11 +12,13 @@ import { routing } from './app.routing';
 */
 import { AppComponent } from './app.component';
 import { LandingComponent } from './landing/landing.component';
+import { DetailComponent } from './detail/detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LandingComponent
+    LandingComponent,
+    DetailComponent
   ],
   imports: [
     BrowserModule,
