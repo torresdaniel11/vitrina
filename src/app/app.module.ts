@@ -12,6 +12,7 @@ Prime ng components
 */
 
 import {GalleriaModule} from 'primeng/galleria';
+import {CarouselModule} from 'primeng/carousel';
 
 /*
   Custom components
@@ -32,7 +33,8 @@ import { FilterBrandPipe } from './_pipes/filter-brand.pipe';
     BrowserModule,
     routing,
     FormsModule,
-    GalleriaModule
+    GalleriaModule,
+    CarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]
