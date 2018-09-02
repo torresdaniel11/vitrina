@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+
+img.ui-panel-images {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 100%;
+}
+
+li.ui-galleria-panel {
+  text-align: center;
+}
+
+.ui-galleria{
+  margin: auto;
+}
