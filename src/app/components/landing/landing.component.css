@@ -1,0 +1,17 @@
+.car-box {
+    border: 1px solid #999;
+    margin-top: 20px;
+}
+
+img.car-thumbnail {
+    width: 100%;
+    height: auto;
+}
+
+.car-resume {
+    text-align: center;
+}
+
+.car-price {
+    text-align: center;
+}
