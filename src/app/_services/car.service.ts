@@ -26,6 +26,14 @@ export class CarService {
     return;
   }
 
+  getCarsByBrand(brand: string): Car[] {
+    if (!brand) return this.cars;
+    brand = brand.toLowerCase();
+    return this.cars.filter(car => {
+      return car['brand'].toLowerCase().includes(brand);
+    });
+  }
+
   sortByBrand(array: any[]): any[] {
     array.sort((a: any, b: any) => {
       if (a['brand'] < b['brand']) {
