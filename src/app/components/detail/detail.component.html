@@ -1,16 +1,71 @@
 
 
 <div class="row">
+  <div class="col-12">
+    <div class="resume-bar">
+      <a routerLink="/"> <span class="resume-span">Volver al inicio</span></a> <div class="resume-header"> <span class="resume-span">{{currentCar.brand}}  </span><span class="resume-span">{{currentCar.model}}  </span><span class="resume-span">{{currentCar.year}}  </span>  </div>
+    </div>
+
+  </div>
+</div>
+<div class="row pad-30">
   <div class="col-12 col-lg-6">
     <div>
       <p-galleria [images]="images" [panelWidth]="width" [panelHeight]="height" [showCaption]="false" [autoPlay]="true" [transitionInterval]="3000" [effectDuration]="200"></p-galleria>
     </div>
   </div>
-  <div class="col-12 col-lg-6">
-    caracteristicas
-  </div>
 
-  <div class="col-12">
-    similares
+  <div class="col-12 col-lg-6 ">
+    <div class="row details">
+      <div class="col-12" style="text-align:center">
+        <h3>Caracteristicas</h3>
+      </div>
+      <div class="col-6">
+        <span class="char-name">Marca</span>
+      </div>
+      <div class="col-6 align-right">
+        <span class="char-value">{{currentCar.brand}}</span>
+      </div>
+      <div class="col-6">
+        <span class="char-name">Modelo</span>
+      </div>
+      <div class="col-6 align-right">
+        <span class="char-value">{{currentCar.model}}</span>
+      </div>
+      <div class="col-6">
+        <span class="char-name">Año</span>
+      </div>
+      <div class="col-6 align-right">
+        <span class="char-value">{{currentCar.year}}</span>
+      </div>
+      <div class="col-12 align-center">
+        <span class="char-value price">${{currentCar.price}}</span>
+      </div>
+
+    </div>
+  </div>
+</div>
+<div class="row">
+
+  <div class="col-12 pad-30" >
+    <h5>Te pueden interesar otros {{currentCar.brand}}</h5>
+    <p-carousel [value]="similarCars">
+      <ng-template let-car pTemplate="item">
+        <div  style="text-align:center">
+            <div class="row" >
+                <div class="col-12"><img src="{{car.thumbnail}}" class="mini-img"></div>
+            </div>
+            <div class="row">
+                <div class="col-6">{{car.model}}</div>
+                <div class="col-6">{{car.year}}</div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <button class="btn btn-warning" routerLink="/detail/{{car.carId}}" [routerLinkActive]="['is-active']">  Ver <i class="fa fa-search"></i></button>
+                </div>
+            </div>
+        </div>
+      </ng-template>
+    </p-carousel>
   </div>
 </div>

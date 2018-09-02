@@ -5,3 +5,48 @@ img{
 img.ui-panel-images {
     height: 100%;
 }
+
+.align-right {
+    text-align: right;
+}
+.align-center{
+  text-align: center;
+}
+
+.char-name {
+    font-weight: bold;
+}
+
+.char-name, .char-value {
+  font-size: 1.2rem;
+}
+
+.resume-header {
+  display:inline;
+  border-left:1px solid #999
+}
+
+.resume-span{
+  margin: 0 10px;
+}
+
+.resume-bar{
+  height: 39px;
+  background: #eee;
+  padding-top: 8px;
+}
+
+.price{
+  font-size: 1.8rem;
+font-weight: lighter;
+color: #777;
+}
+
+.mini-img{
+  height: 70px;
+  width: auto;
+}
+
+.is-active{
+  visibility: hidden;
+}

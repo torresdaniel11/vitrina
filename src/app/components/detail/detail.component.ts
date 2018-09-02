@@ -1,5 +1,6 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { ActivatedRoute } from '@angular/router'
+import { Location } from '@angular/common';
 import { CarService } from '../../_services/car.service';
 import { Car } from '../../_models/car.model'
 
@@ -19,30 +20,36 @@ export class DetailComponent implements OnInit {
     if (this.height > this.width) {
       this.height = this.width * 0.6
     }
-
   }
 
   carId: string;
   currentCar: Car;
   images: any[];
-  constructor(private cars: CarService, private route: ActivatedRoute) {
+  similarCars: Car[];
+  constructor(private cars: CarService, private route: ActivatedRoute, private _location: Location) {
     this.images = []
+    this.similarCars = [];
     this.route.params.subscribe(params => {
       this.carId = params.carId
       this.currentCar = this.cars.getCar(this.carId)
-      this.fetchImages()
+      this.fetchInfo()
     })
-
   }
 
   ngOnInit() {
     window.dispatchEvent(new Event('resize'));
   }
 
-  fetchImages() {
+  fetchInfo() {
     for (let img of this.currentCar.images) {
       this.images.push({ source: img })
     }
+    this.similarCars = this.cars.getCarsByBrand(this.currentCar.brand)
+    console.log(this.similarCars);
+  }
+
+  goBack() {
+    this._location.back();
   }
 
 

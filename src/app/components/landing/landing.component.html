@@ -1,19 +1,23 @@
 
-    <div class="row">
+    <div class="row pad-30">
 
       <div class="col-12">
-        <input [(ngModel)]="searchText" placeholder="Buscar por marca...">
+        <input class="form-control" [(ngModel)]="searchText" placeholder="Buscar por marca...">
       </div>
       <ng-container *ngFor="let car of carsToShow | filterBrand : searchText">
         <div class="col-12 col-md-6 col-lg-4">
           <div class="car-box">
-            <img class="car-thumbnail" [src]="car.thumbnail" />
-            <div class="car-resume">
-              <span class="brand"></span>{{car.brand}}  <span class="model">  {{car.model}}  </span><span class="year">  {{car.year}}</span>
-            </div>
-            <div class="car-price">
-              <span>{{car.price}}</span>
-            </div>
+            <a routerLink="detail/{{car.carId}}">
+              <img class="car-thumbnail" [src]="car.thumbnail" />
+
+              <div class="car-price">
+                <span>{{car.price}}</span>
+              </div>
+              <div class="car-resume">
+                <span class="brand">{{car.brand}}</span>  <span class="model">  {{car.model}}  </span><span class="year">  {{car.year}}</span>
+              </div>
+            </a>
+
           </div>
 
         </div>
