@@ -1,6 +1,7 @@
 footer {
     height: 70px;
     border-top: 1px solid;
+    background: #b71717;
 }
 
 .app-body {
@@ -9,4 +10,10 @@ footer {
 
 .topbar{
   height: 50px;
+  background: #b71717;
+}
+
+.white-col{
+  color: white;
+  padding: 0 10px;
 }
