@@ -46,4 +46,16 @@ export class CarService {
     });
     return array;
   }
+
+
+  formatNumber(num): string {
+    num = num == undefined ? 0 : num;
+    num = num.isNaN ? parseFloat(num) : num;
+    var p = num.toFixed(2).split(".");
+    var tot = p[0].split("").reverse().reduce(function(acc, num, i, orig) {
+      return num == "-" ? acc : num + (i && !(i % 3) ? "," : "") + acc;
+    }, "") + "." + p[1];
+    return tot.split(".")[0];
+  }
+
 }

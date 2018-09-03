@@ -26,7 +26,7 @@ export class DetailComponent implements OnInit {
   currentCar: Car;
   images: any[];
   similarCars: Car[];
-  constructor(private cars: CarService, private route: ActivatedRoute, private _location: Location) {
+  constructor(public cars: CarService, private route: ActivatedRoute, private _location: Location) {
     this.images = []
     this.similarCars = [];
     this.route.params.subscribe(params => {

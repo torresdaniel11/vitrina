@@ -17,7 +17,7 @@
           <a routerLink="detail/{{car.carId}}">
             <img class="car-thumbnail" [src]="car.thumbnail" />
             <div class="car-price">
-              <span>{{car.price}}</span>
+              <span>${{cars.formatNumber(car.price)}}</span>
             </div>
             <div class="car-resume">
               <span class="brand">{{car.brand}}</span>  <span class="model">  {{car.model}}  </span><span class="year">  {{car.year}}</span>
@@ -46,7 +46,7 @@
           <a (click)="selectToCompare(car)" >
             <img class="car-thumbnail" [src]="car.thumbnail" />
             <div class="car-price">
-              <span>{{car.price}}</span>
+              <span>${{car.price}}</span>
             </div>
             <div class="car-resume">
               <span class="brand">{{car.brand}}</span>  <span class="model">  {{car.model}}  </span><span class="year">  {{car.year}}</span>
@@ -59,10 +59,12 @@
       </div>
     </ng-container>
     <ng-container *ngIf="carsToCompare.length > 1">
-      <div class="col-12" style="text-align:center">
+      <div class="col-12" style="text-align:center; padding-top:30px;">
         <button class="btn btn-success" (click)="openComparison()">Comparar</button>
       </div>
     </ng-container>
+
+
   </ng-template>
 </div>
 

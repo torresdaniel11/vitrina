@@ -19,6 +19,7 @@
     <div class="row details">
       <div class="col-12" style="text-align:center">
         <h3>Caracteristicas</h3>
+        <hr />
       </div>
       <div class="col-6">
         <span class="char-name">Marca</span>
@@ -38,30 +39,110 @@
       <div class="col-6 align-right">
         <span class="char-value">{{currentCar.year}}</span>
       </div>
-      <div class="col-12 align-center">
-        <span class="char-value price">${{currentCar.price}}</span>
+      <div class="col-6">
+        <span class="char-name">Estado</span>
       </div>
+      <div class="col-6 align-right">
+        <span class="char-value">{{currentCar.tecnical.new? 'Nuevo': 'Usado'}}</span>
+      </div>
+      <div class="col-12 align-center">
+        <span class="char-value price">${{cars.formatNumber(currentCar.price)}}</span>
+      </div>
+    </div>
+  </div>
 
+  <div class="col-12">
+    <div class="row details">
+      <div class="col-12">
+        <h4>Ficha técnica</h4>
+        <hr />
+      </div>
+      <div class="col-6 col-md-3">
+        <span class="char-name">Color</span>
+      </div>
+      <div class="col-6 col-md-3 align-right">
+        <span class="char-value">{{currentCar.tecnical.color}}</span>
+      </div>
+      <div class="col-3 col-md-2">
+        <span class="char-name">Versión</span>
+      </div>
+      <div class="col-9 col-md-4 align-right">
+        <span class="char-value">{{currentCar.tecnical.version}}</span>
+      </div>
+      <div class="col-6 col-md-3">
+        <span class="char-name">Dirección</span>
+      </div>
+      <div class="col-6 col-md-3 align-right">
+        <span class="char-value">{{currentCar.tecnical.direction}}</span>
+      </div>
+      <div class="col-6 col-md-3">
+        <span class="char-name">Motor</span>
+      </div>
+      <div class="col-6 col-md-3 align-right">
+        <span class="char-value">{{currentCar.tecnical.engine}} cc</span>
+      </div>
+      <div class="col-6 col-md-3">
+        <span class="char-name">Transmisión</span>
+      </div>
+      <div class="col-6 col-md-3 align-right">
+        <span class="char-value">{{currentCar.tecnical.transmission}}</span>
+      </div>
+      <div class="col-6 col-md-3">
+        <span class="char-name">Tracción</span>
+      </div>
+      <div class="col-6 col-md-3 align-right">
+        <span class="char-value">{{currentCar.tecnical.traction}}</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-12">
+    <div class="row details">
+      <div class="col-12">
+        <h4>Ficha de seguridad</h4>
+        <hr />
+      </div>
+      <div class="col-6 col-md-3">
+        <span class="char-name">Frenos ABS</span>
+      </div>
+      <div class="col-6 col-md-3 align-right">
+        <span class="char-value">{{currentCar.security.absbrake}}</span>
+      </div>
+      <div class="col-3 col-md-2">
+        <span class="char-name">Airbag</span>
+      </div>
+      <div class="col-9 col-md-4 align-right">
+        <span class="char-value">{{currentCar.security.airbag}}</span>
+      </div>
+      <div class="col-6 col-md-3">
+        <span class="char-name">Alarma</span>
+      </div>
+      <div class="col-6 col-md-3 align-right">
+        <span class="char-value">{{currentCar.security.alarm}}</span>
+      </div>
     </div>
   </div>
 </div>
+
 <div class="row">
 
   <div class="col-12 pad-30" >
     <h5>Te pueden interesar otros {{currentCar.brand}}</h5>
     <p-carousel [value]="similarCars">
-      <ng-template let-car pTemplate="item">
+      <ng-template let-car pTemplate="item" numVisible="3" pageLinks="0" circular="circular" autoplayInterval="1000">
         <div  style="text-align:center">
             <div class="row" >
                 <div class="col-12"><img src="{{car.thumbnail}}" class="mini-img"></div>
             </div>
             <div class="row">
-                <div class="col-6">{{car.model}}</div>
-                <div class="col-6">{{car.year}}</div>
+                <div class="col-4">{{car.brand}}</div>
+                <div class="col-4">{{car.model}}</div>
+                <div class="col-4">{{car.year}}</div>
+                <div class="col-12" ><span style="color:#297d29">${{cars.formatNumber(car.price)}}</span></div>
             </div>
-            <div class="row">
+            <div class="row" style="padding-top:20px;">
                 <div class="col-12">
-                    <button class="btn btn-warning" routerLink="/detail/{{car.carId}}" [routerLinkActive]="['is-active']">  Ver <i class="fa fa-search"></i></button>
+                    <button class="btn btn-info" routerLink="/detail/{{car.carId}}" [routerLinkActive]="['is-active']">  Ver <i class="fa fa-search"></i></button>
                 </div>
             </div>
         </div>
