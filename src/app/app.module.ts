@@ -15,7 +15,7 @@ Prime ng components
 import {GalleriaModule} from 'primeng/galleria';
 import {CarouselModule} from 'primeng/carousel';
 import {MessagesModule} from 'primeng/messages';
-
+import {ToastModule} from 'primeng/toast';
 /*
   Custom components
 */
@@ -40,7 +40,8 @@ import { ComparisonComponent } from './components/comparison/comparison.componen
     FormsModule,
     GalleriaModule,
     CarouselModule,
-    MessagesModule
+    MessagesModule,
+    ToastModule
   ],
   providers: [],
   bootstrap: [AppComponent]

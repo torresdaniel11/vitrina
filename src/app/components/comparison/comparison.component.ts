@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Car } from '../../_models/car.model';
 
 @Component({
@@ -10,9 +10,16 @@ export class ComparisonComponent implements OnInit {
 
   @Input("carsToCompare")
   carsToCompare: Car[]
+  @Output() carsToCompareChange: EventEmitter<any> = new EventEmitter<any>();
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  clearCompare() {
+    this.carsToCompare = [];
+    this.carsToCompareChange.emit(this.carsToCompare)
   }
 
 }

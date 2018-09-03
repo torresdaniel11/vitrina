@@ -1,6 +1,7 @@
-<div class="row" style="padding:20px 8px">
+<div id="comparisonSection" class="row" style="padding:20px 8px">
   <div class="col-12" style="text-align:center">
     <h4>Comparación</h4>
+    <a (click)="clearCompare()" style="color:#007ad9">Comparar otros modelos</a>
     <hr />
   </div>
   <ng-container *ngFor="let car of carsToCompare">
