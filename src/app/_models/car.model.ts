@@ -10,7 +10,7 @@ export interface Car {
     new: boolean,
     version: string,
     direction: string,
-    engine: number,
+    engine: any,
     transmission: string,
     traction: string,
   },
