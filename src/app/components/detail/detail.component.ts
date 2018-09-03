@@ -15,8 +15,8 @@ export class DetailComponent implements OnInit {
   height: number;
   @HostListener('window:resize', ['$event'])
   onResize(event) {
-    this.width = Math.min(event.target.innerWidth - 32, 450);
-    this.height = Math.min(event.target.innerHeight - 60, 300);
+    this.width = Math.min(event.target.innerWidth - 32, 400);
+    this.height = Math.min(event.target.innerHeight - 60, 280);
     if (this.height > this.width) {
       this.height = this.width * 0.6
     }
@@ -30,7 +30,6 @@ export class DetailComponent implements OnInit {
     this.images = []
     this.similarCars = [];
     this.route.params.subscribe(params => {
-      console.log("CHANGE")
       this.carId = params.carId
       this.currentCar = this.cars.getCar(this.carId)
       this.fetchInfo()
@@ -47,7 +46,7 @@ export class DetailComponent implements OnInit {
       this.images.push({ source: img })
     }
     this.similarCars = this.cars.getCarsByBrand(this.currentCar.brand)
-    console.log(this.similarCars);
+    this.similarCars.splice((this.similarCars.indexOf(this.currentCar)), 1)
   }
 
   goBack() {

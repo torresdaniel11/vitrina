@@ -39,3 +39,14 @@ a:hover{
   top: 110px;
   left: 140px;
 }
+
+.btn-comparar {
+    text-align:center;
+    padding-top: 10px;
+}
+
+@media (min-width: 576px){
+  .btn-comparar {
+      text-align:right;
+  }
+}

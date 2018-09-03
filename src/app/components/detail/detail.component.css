@@ -60,3 +60,10 @@ img.ui-panel-images {
 h4{
   padding-top: 30px;
 }
+
+
+@media (max-width: 576px){
+  .pad-30 {
+      padding: 30px 20px;
+  }
+}
