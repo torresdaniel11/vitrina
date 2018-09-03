@@ -1,50 +1,72 @@
 
-    <div class="row pad-30">
+<div class="row pad-30">
 
-      <div class="col-12">
-        <input class="form-control" [(ngModel)]="searchText" placeholder="Buscar por marca...">
-        <button (click)="selectMode = !selectMode">Comparar vehículos</button>
+  <div class="col-12">
+    <input class="form-control" [(ngModel)]="searchText" placeholder="Buscar por marca...">
+    <button (click)="toggleSelectMode()">{{toggleButtonText}}</button>
+  </div>
+
+  <ng-template *ngIf="selectMode;then selectView ;else normalView"> </ng-template>
+
+  <ng-template #normalView>
+    <ng-container *ngFor="let car of carsToShow | filterBrand : searchText">
+      <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+        <div class="car-box">
+          <a routerLink="detail/{{car.carId}}">
+            <img class="car-thumbnail" [src]="car.thumbnail" />
+            <div class="car-price">
+              <span>{{car.price}}</span>
+            </div>
+            <div class="car-resume">
+              <span class="brand">{{car.brand}}</span>  <span class="model">  {{car.model}}  </span><span class="year">  {{car.year}}</span>
+            </div>
+          </a>
+        </div>
       </div>
+    </ng-container>
+  </ng-template>
 
-    <ng-template *ngIf="selectMode;then selectView ;else normalView"> </ng-template>
-
-    <ng-template #normalView>
-      <ng-container *ngFor="let car of carsToShow | filterBrand : searchText">
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="car-box">
-            <a routerLink="detail/{{car.carId}}">
-              <img class="car-thumbnail" [src]="car.thumbnail" />
-              <div class="car-price">
-                <span>{{car.price}}</span>
-              </div>
-              <div class="car-resume">
-                <span class="brand">{{car.brand}}</span>  <span class="model">  {{car.model}}  </span><span class="year">  {{car.year}}</span>
-              </div>
-            </a>
-          </div>
-        </div>
-      </ng-container>
-    </ng-template>
-
-    <ng-template #selectView>
-      <ng-container *ngFor="let car of carsToShow | filterBrand : searchText">
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="car-box select">
-            <a (click)="selectToCompare(car)" >
-              <img class="car-thumbnail" [src]="car.thumbnail" />
-              <div class="car-price">
-                <span>{{car.price}}</span>
-              </div>
-              <div class="car-resume">
-                <span class="brand">{{car.brand}}</span>  <span class="model">  {{car.model}}  </span><span class="year">  {{car.year}}</span>
-              </div>
-            </a>
-          </div>
-          <ng-container *ngIf="isSelected(car)">
-            <i class="fa fa-check fa-5x fa-6x green-check" ></i>
-          </ng-container>
-        </div>
-      </ng-container>
-    </ng-template>
-
+  <ng-template #selectView>
+    <div class="col-12">
+      <p-messages [(value)]="msgs"></p-messages>
     </div>
+
+    <ng-container *ngIf="carsToCompare.length > 1">
+      <div class="col-12" style="text-align:center">
+        <button class="btn btn-success" (click)="openComparar()">Comparar</button>
+      </div>
+    </ng-container>
+
+    <ng-container *ngFor="let car of carsToShow | filterBrand : searchText">
+      <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+        <div class="car-box select">
+          <a (click)="selectToCompare(car)" >
+            <img class="car-thumbnail" [src]="car.thumbnail" />
+            <div class="car-price">
+              <span>{{car.price}}</span>
+            </div>
+            <div class="car-resume">
+              <span class="brand">{{car.brand}}</span>  <span class="model">  {{car.model}}  </span><span class="year">  {{car.year}}</span>
+            </div>
+          </a>
+        </div>
+        <ng-container *ngIf="isSelected(car)">
+          <i class="fa fa-check fa-5x fa-6x green-check" ></i>
+        </ng-container>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="carsToCompare.length > 1">
+      <div class="col-12" style="text-align:center">
+        <button class="btn btn-success" (click)="openComparar()">Comparar</button>
+      </div>
+    </ng-container>
+
+  </ng-template>
+
+</div>
+
+
+<section>
+  <hr />
+  <app-comparison [carsToCompare]="carsToCompare" ></app-comparison>
+</section>

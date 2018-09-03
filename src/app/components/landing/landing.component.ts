@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Message } from 'primeng/components/common/api';
 import { Car } from '../../_models/car.model';
 import { CarService } from '../../_services/car.service';
 
@@ -14,13 +15,25 @@ export class LandingComponent implements OnInit {
   carsToCompare: Car[];
   searchText: string;
   selectMode: boolean;
+  msgs: Message[] = [];
+  toggleButtonText: string;
   constructor(private cars: CarService) {
     this.carsToCompare = [];
     this.carsToShow = cars.getCars();
     this.selectMode = false;
+    this.toggleButtonText = "Comparar vehículos";
   }
 
   ngOnInit() {
+  }
+
+  toggleSelectMode() {
+    this.selectMode = !this.selectMode;
+    this.toggleButtonText = !this.selectMode ? "Comparar vehículos" : "Cancelar comparación";
+    this.msgs = [];
+    if (this.selectMode) {
+      this.msgs.push({ severity: 'info', summary: 'Comparar vehículos', detail: 'Selecciona hasta 3 carros que quieras comparar' });
+    }
   }
 
   selectToCompare(car: Car) {
@@ -56,6 +69,10 @@ export class LandingComponent implements OnInit {
   */
   getArrayPosition(car: Car): number {
     return this.carsToCompare.indexOf(car)
+  }
+
+  openComparar(){
+    
   }
 
 
