@@ -1,12 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { Message } from 'primeng/components/common/api';
+import { MessageService } from 'primeng/api';
 import { Car } from '../../_models/car.model';
 import { CarService } from '../../_services/car.service';
 
+declare var $: any;
 @Component({
   selector: 'app-landing',
   templateUrl: './landing.component.html',
-  styleUrls: ['./landing.component.css']
+  styleUrls: ['./landing.component.css'],
+  providers: [MessageService]
 })
 
 export class LandingComponent implements OnInit {
@@ -15,9 +18,10 @@ export class LandingComponent implements OnInit {
   carsToCompare: Car[];
   searchText: string;
   selectMode: boolean;
+  comparisonView: boolean;
   msgs: Message[] = [];
   toggleButtonText: string;
-  constructor(private cars: CarService) {
+  constructor(private cars: CarService, private messageService: MessageService) {
     this.carsToCompare = [];
     this.carsToShow = cars.getCars();
     this.selectMode = false;
@@ -33,6 +37,8 @@ export class LandingComponent implements OnInit {
     this.msgs = [];
     if (this.selectMode) {
       this.msgs.push({ severity: 'info', summary: 'Comparar vehículos', detail: 'Selecciona hasta 3 carros que quieras comparar' });
+    } else {
+      this.comparisonView = false;
     }
   }
 
@@ -42,7 +48,7 @@ export class LandingComponent implements OnInit {
     } else if (this.carsToCompare.length < 3) {
       this.carsToCompare.push(car);
     } else {
-      alert("ya tienes 3 escogidos")
+      this.messageService.add({ key: 'tc', severity: 'error', summary: 'Límite de comparación', detail: 'Puedes escoger hasta 3 carros' });
     }
   }
 
@@ -71,9 +77,20 @@ export class LandingComponent implements OnInit {
     return this.carsToCompare.indexOf(car)
   }
 
-  openComparar(){
-    
+  openComparison() {
+    this.comparisonView = true;
+    setTimeout(() => {
+      document.getElementById("comparisonSection").scrollIntoView({ behavior: 'smooth' })
+    }, 150)
+
   }
+
+  // smoothScroll(id) {
+  //   setTimeout(() => {
+  //     let el = document.getElementById(id).scrollIntoView({ behavior: 'smooth' })
+  //     el
+  //   }, 100)
+  // }
 
 
 }

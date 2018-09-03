@@ -1,9 +1,11 @@
-
 <div class="row pad-30">
 
-  <div class="col-12">
-    <input class="form-control" [(ngModel)]="searchText" placeholder="Buscar por marca...">
-    <button (click)="toggleSelectMode()">{{toggleButtonText}}</button>
+  <div class="col-6">
+    <input class="form-control" [(ngModel)]="searchText" placeholder="Buscar por marca..." style="max-width:400px">
+  </div>
+
+  <div class="col-6" style="text-align:right">
+    <button class="btn btn-info" (click)="toggleSelectMode()">{{toggleButtonText}}</button>
   </div>
 
   <ng-template *ngIf="selectMode;then selectView ;else normalView"> </ng-template>
@@ -27,13 +29,14 @@
   </ng-template>
 
   <ng-template #selectView>
+    <p-toast position="top-center" key="tc"></p-toast>
     <div class="col-12">
       <p-messages [(value)]="msgs"></p-messages>
     </div>
 
     <ng-container *ngIf="carsToCompare.length > 1">
       <div class="col-12" style="text-align:center">
-        <button class="btn btn-success" (click)="openComparar()">Comparar</button>
+        <button class="btn btn-success" (click)="openComparison()">Comparar</button>
       </div>
     </ng-container>
 
@@ -57,16 +60,13 @@
     </ng-container>
     <ng-container *ngIf="carsToCompare.length > 1">
       <div class="col-12" style="text-align:center">
-        <button class="btn btn-success" (click)="openComparar()">Comparar</button>
+        <button class="btn btn-success" (click)="openComparison()">Comparar</button>
       </div>
     </ng-container>
-
   </ng-template>
-
 </div>
 
-
-<section>
+<section *ngIf="comparisonView && carsToCompare.length > 1">
   <hr />
-  <app-comparison [carsToCompare]="carsToCompare" ></app-comparison>
+  <app-comparison [(carsToCompare)]="carsToCompare" ></app-comparison>
 </section>
