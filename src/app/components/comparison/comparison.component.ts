@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Car } from '../../_models/car.model';
 
 @Component({
   selector: 'app-comparison',
@@ -7,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ComparisonComponent implements OnInit {
 
+  @Input("carsToCompare")
+  carsToCompare: Car[]
   constructor() { }
 
   ngOnInit() {

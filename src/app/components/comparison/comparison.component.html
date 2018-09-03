@@ -1,3 +1,55 @@
-<p>
-  comparison works!
-</p>
+<div class="row" style="padding:20px 8px">
+  <div class="col-12" style="text-align:center">
+    <h4>Comparación</h4>
+    <hr />
+  </div>
+  <ng-container *ngFor="let car of carsToCompare">
+    <div [ngClass]="(carsToCompare.length ==2)?'col-6':'col-4'" >
+
+      <div style="text-align:center">
+        <img class="comparison-image" [src]="car.thumbnail" />
+        <div>
+          <span class="comparison-title">{{car.brand}} {{car.model}}</span>
+          <span class="comparison-price">${{car.price}}</span>
+        </div>
+        <div>
+          <a routerLink="/detail/{{car.carId}}">Ver detalle</a>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+
+  <div class="col-12 pad-30">
+    <h4>Ficha técnica</h4>
+    <hr />
+  </div>
+  <div class="col-12 row container">
+    <ng-container *ngFor="let car of carsToCompare">
+      <div [ngClass]="(carsToCompare.length ==2)?'col-6':'col-4'" >
+        <span class="comparison-value">{{car.tecnical.color}}</span>
+        <span class="comparison-value">{{car.tecnical.new == true? 'Nuevo' : 'Usado'}} </span>
+        <span class="comparison-value">{{car.tecnical.version}}</span>
+        <span class="comparison-value">{{car.tecnical.direction}}</span>
+        <span class="comparison-value">{{car.tecnical.engine}} cc</span>
+        <span class="comparison-value">{{car.tecnical.transmission}}</span>
+        <span class="comparison-value">{{car.tecnical.traction}}</span>
+      </div>
+    </ng-container>
+  </div>
+
+  <div class="col-12 pad-30">
+    <h4>Seguridad</h4>
+    <hr />
+  </div>
+  <div class="col-12 row container">
+    <ng-container *ngFor="let car of carsToCompare">
+      <div [ngClass]="(carsToCompare.length ==2)?'col-6':'col-4'" >
+        <span class="comparison-value">{{car.security.absbrake == true? 'Frenos ABS' : ''}} </span>
+        <span class="comparison-value">{{car.security.airbag == true? 'Airbag' : ''}} </span>
+        <span class="comparison-value">{{car.security.alarm == true? 'Alarma' : ''}} </span>
+
+      </div>
+    </ng-container>
+  </div>
+
+</div>

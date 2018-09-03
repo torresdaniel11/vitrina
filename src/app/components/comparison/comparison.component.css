@@ -1,0 +1,22 @@
+.comparison-title{
+  font-weight: 600;
+  font-size: 1.2rem
+}
+
+.comparison-price{
+  color:#444;
+  font-size: 1.15rem;
+}
+
+.comparison-value, .comparison-title, .comparison-price{
+  display: block;
+}
+
+.comparison-image{
+  width: 100%;
+  height: auto;
+}
+
+.comparison-value {
+    padding: 10px;
+}
