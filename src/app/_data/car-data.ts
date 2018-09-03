@@ -1,12 +1,25 @@
 export const CarData = [
   {
-    carId:"id1",
+    carId: "id1",
     thumbnail: "assets/images/thumbnail/fiesta.png",
     brand: "Ford",
     model: "Fiesta",
-    year: 2001,
+    year: 2013,
     price: 27000000,
-    characteristics: "",
+    details: {
+      color: "Blanco",
+      new: true,
+      version: "HATCHBACK SE MT 1600CC",
+      direction: "Hydraulic",
+      engine: 1597,
+      transmission: "Mechanic",
+      traction: "4x2"
+    },
+    security: {
+      absbrake: true,
+      airbag: true,
+      alarm: true
+    },
     images: [
       "assets/images/car_model/fiesta/fiesta_1.png",
       "assets/images/car_model/fiesta/fiesta_2.png",
@@ -18,13 +31,27 @@ export const CarData = [
     ]
   },
   {
-    carId:"id2",
+    carId: "id2",
     thumbnail: "assets/images/thumbnail/cruze.png",
     brand: "Chevrolet",
     model: "Cruze",
     year: 2008,
     price: 30900100,
     characteristics: "",
+    details: {
+      color: "Blanco",
+      new: true,
+      version: "HATCHBACK SE MT 1600CC",
+      direction: "Hydraulic",
+      engine: 1597,
+      transmission: "Mechanic",
+      traction: "4x2"
+    },
+    security: {
+      absbrake: true,
+      airbag: true,
+      alarm: true
+    },
     images: [
       "assets/images/car_model/cruze/cruze_1.png",
       "assets/images/car_model/cruze/cruze_2.png",
@@ -35,13 +62,27 @@ export const CarData = [
     ]
   },
   {
-    carId:"id3",
+    carId: "id3",
     thumbnail: "assets/images/thumbnail/fiesta.png",
     brand: "Ford",
     model: "Fiesta",
     year: 2010,
     price: 27000000,
     characteristics: "",
+    details: {
+      color: "Blanco",
+      new: true,
+      version: "HATCHBACK SE MT 1600CC",
+      direction: "Hydraulic",
+      engine: 1597,
+      transmission: "Mechanic",
+      traction: "4x2"
+    },
+    security: {
+      absbrake: true,
+      airbag: true,
+      alarm: true
+    },
     images: [
       "assets/images/car_model/fiesta/fiesta_1.png",
       "assets/images/car_model/fiesta/fiesta_2.png",
@@ -53,13 +94,27 @@ export const CarData = [
     ]
   },
   {
-    carId:"id4",
+    carId: "id4",
     thumbnail: "assets/images/thumbnail/cruze.png",
     brand: "Chevrolet",
     model: "Cruze",
     year: 2017,
     price: 30900100,
     characteristics: "",
+    details: {
+      color: "Blanco",
+      new: true,
+      version: "HATCHBACK SE MT 1600CC",
+      direction: "Hydraulic",
+      engine: 1597,
+      transmission: "Mechanic",
+      traction: "4x2"
+    },
+    security: {
+      absbrake: true,
+      airbag: true,
+      alarm: true
+    },
     images: [
       "assets/images/car_model/cruze/cruze_1.png",
       "assets/images/car_model/cruze/cruze_2.png",
