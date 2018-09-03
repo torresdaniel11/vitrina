@@ -28,3 +28,14 @@ a:hover{
   text-decoration: none;
 
 }
+
+.select{
+  filter: grayscale();
+}
+
+.green-check{
+  color: green;
+  position: absolute;
+  top: 110px;
+  left: 140px;
+}
