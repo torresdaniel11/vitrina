@@ -68,7 +68,7 @@ export const CarData = [
     model: "A4",
     year: 2008,
     price: 30900000,
-    details: {
+    tecnical: {
       color: "Rojo",
       new: false,
       version: "B7 1.8T AVANT LUXURY TP 1800CC T",
@@ -100,7 +100,7 @@ export const CarData = [
     model: "Q5",
     year: 2010,
     price: 55000000,
-    details: {
+    tecnical: {
       color: "Plateado",
       new: false,
       version: "2.0 TDI ATTRACTION MT 2000CC TD",
@@ -130,7 +130,7 @@ export const CarData = [
     model: "TT",
     year: 2017,
     price: 137800000,
-    details: {
+    tecnical: {
       color: "Azul",
       new: false,
       version: "S COUPE 2.0 TFSI QUATTRO 265 HP S TRONIC",
@@ -160,7 +160,7 @@ export const CarData = [
     model: "Q7",
     year: 2011,
     price: 113000000,
-    details: {
+    tecnical: {
       color: "Gris",
       new: false,
       version: "V6 3.6 FSI QUATTRO TP 3600CC",
@@ -190,7 +190,7 @@ export const CarData = [
     model: "Escape",
     year: 2012,
     price: 44900000,
-    details: {
+    tecnical: {
       color: "Rojo	",
       new: false,
       version: "XLS AT 3000CC 4X4",
@@ -220,7 +220,7 @@ export const CarData = [
     model: "Focus",
     year: 2015,
     price: 49900000,
-    details: {
+    tecnical: {
       color: "Azul",
       new: false,
       version: "TITANIUM TP 2000CC 4P",
@@ -250,7 +250,7 @@ export const CarData = [
     model: "EcoSport",
     year: 2008,
     price: 28800000,
-    details: {
+    tecnical: {
       color: "Negro",
       new: false,
       version: "2.0 L MT 2000CC 4X4",
@@ -280,7 +280,7 @@ export const CarData = [
     model: "Explorer",
     year: 2014,
     price: 82500000,
-    details: {
+    tecnical: {
       color: "Rojo",
       new: false,
       version: "LIMITED AT 3500CC 4X4",
@@ -310,7 +310,7 @@ export const CarData = [
     model: "Captiva",
     year: 2010,
     price: 28750000,
-    details: {
+    tecnical: {
       color: "Negro",
       new: false,
       version: "SPORT AT 3600CC 5P",
@@ -340,7 +340,7 @@ export const CarData = [
     model: "Camaro",
     year: 2017,
     price: 172990000,
-    details: {
+    tecnical: {
       color: "Azul",
       new: true,
       version: "SS AT 6200CC",
@@ -370,7 +370,7 @@ export const CarData = [
     model: "Tracker",
     year: 2016,
     price: 43900000,
-    details: {
+    tecnical: {
       color: "Blanco",
       new: false,
       version: "LS MT 1800CC",
@@ -400,7 +400,7 @@ export const CarData = [
     model: "M235",
     year: 2015,
     price: 105000000,
-    details: {
+    tecnical: {
       color: "Blanco",
       new: false,
       version: "Coupe TP 3000 CC T",
@@ -430,7 +430,7 @@ export const CarData = [
     model: "Serie 1",
     year: 2015,
     price: 68500000,
-    details: {
+    tecnical: {
       color: "Gris",
       new: false,
       version: "118i PAQUETE M",
@@ -460,7 +460,7 @@ export const CarData = [
     model: "X5",
     year: 2015,
     price: 195000000,
-    details: {
+    tecnical: {
       color: "Gris",
       new: false,
       version: "[E70] xDrive30d Premium TP 3000CC TD",
@@ -489,7 +489,7 @@ export const CarData = [
     model: "Z4",
     year: 2015,
     price: 98000000,
-    details: {
+    tecnical: {
       color: "Negro",
       new: false,
       version: "E89 SDRIVE20I TP 2000CC",
@@ -519,7 +519,7 @@ export const CarData = [
     model: "Cherokee",
     year: 2014,
     price: 66000000,
-    details: {
+    tecnical: {
       color: "Beige",
       new: false,
       version: "LONGITUDE AT 3200CC",
@@ -549,7 +549,7 @@ export const CarData = [
     model: "Wrangler",
     year: 2016,
     price: 107000000,
-    details: {
+    tecnical: {
       color: "Azul",
       new: false,
       version: "SPORT AT 3600CC",
@@ -579,7 +579,7 @@ export const CarData = [
     model: "Gran Cherokee",
     year: 2012,
     price: 84500000,
-    details: {
+    tecnical: {
       color: "Gris",
       new: false,
       version: "LIMITED TP 5700CC 4X4",
@@ -609,7 +609,7 @@ export const CarData = [
     model: "Patriot",
     year: 2007,
     price: 33890000,
-    details: {
+    tecnical: {
       color: "Azul",
       new: false,
       version: "LIMITED AT 2400CC 4X4 5P",
