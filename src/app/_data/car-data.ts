@@ -6,7 +6,7 @@ export const CarData = [
     model: "Fiesta",
     year: 2013,
     price: 27000000,
-    details: {
+    tecnical: {
       color: "Blanco",
       new: true,
       version: "HATCHBACK SE MT 1600CC",
@@ -38,7 +38,7 @@ export const CarData = [
     year: 2008,
     price: 30900100,
     characteristics: "",
-    details: {
+    tecnical: {
       color: "Blanco",
       new: true,
       version: "HATCHBACK SE MT 1600CC",
@@ -69,7 +69,7 @@ export const CarData = [
     year: 2010,
     price: 27000000,
     characteristics: "",
-    details: {
+    tecnical: {
       color: "Blanco",
       new: true,
       version: "HATCHBACK SE MT 1600CC",
@@ -101,7 +101,7 @@ export const CarData = [
     year: 2017,
     price: 30900100,
     characteristics: "",
-    details: {
+    tecnical: {
       color: "Blanco",
       new: true,
       version: "HATCHBACK SE MT 1600CC",

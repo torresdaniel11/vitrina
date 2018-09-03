@@ -21,13 +21,15 @@ import { AppComponent } from './app.component';
 import { LandingComponent } from './components/landing/landing.component';
 import { DetailComponent } from './components/detail/detail.component';
 import { FilterBrandPipe } from './_pipes/filter-brand.pipe';
+import { ComparisonComponent } from './comparison/comparison.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingComponent,
     DetailComponent,
-    FilterBrandPipe
+    FilterBrandPipe,
+    ComparisonComponent
   ],
   imports: [
     BrowserModule,
