@@ -30,6 +30,7 @@ export class DetailComponent implements OnInit {
     this.images = []
     this.similarCars = [];
     this.route.params.subscribe(params => {
+      console.log("CHANGE")
       this.carId = params.carId
       this.currentCar = this.cars.getCar(this.carId)
       this.fetchInfo()
@@ -41,6 +42,7 @@ export class DetailComponent implements OnInit {
   }
 
   fetchInfo() {
+    this.images = []
     for (let img of this.currentCar.images) {
       this.images.push({ source: img })
     }
